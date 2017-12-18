@@ -10,10 +10,9 @@ public class Calculator {
 	суммируем аргументы.
 	@param params Аргументы суммирования.
 */
-	public void summ(double ... params) {
-		for (Double param : params) {
-			this.result +=param;
-		}
+	public void summ(double a, double b) {
+		this.result = a + b;
+		
 	}
 	/**
 	получить результат.
@@ -29,9 +28,16 @@ public class Calculator {
 		this.result = 0;
 	}
 	
-	public void minus(double ... params) {
-		for (Double param : params) {
-		this.result -= param;
-		}
+	public void minus(double a, double b) {
+		this.result = a - b;
+	}
+	public void div(double a, double b) {
+		this.result = a/b;
+	}
+	public void mul(double a, double b) {
+		this.result = a*b;
+	}
+	public void ext(double a, double b) {
+		this.result = Math.pow(a, b);
 	}
 }

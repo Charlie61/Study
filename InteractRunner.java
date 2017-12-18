@@ -12,19 +12,33 @@ public class InteractRunner {
 			while (!exit.equals("yes")) {
 				System.out.println("Enter first arg: ");
 				String first = reader.next();
+				double a = Double.valueOf(first);
 				System.out.println("Select action");
 				String action = reader.next();
 				System.out.println("Enter second arg: ");
 				String second = reader.next();
+				double b = Double.valueOf(second);
 				if (action.equals("+")) {	
-				calc.summ(Double.valueOf(first), Double.valueOf(second));
-				System.out.println("Result: " + calc.getResult());
+				calc.summ(a, b);
 				}
 				if (action.equals("-")) {
-				calc.minus(Double.valueOf(first), Double.valueOf(second));
-				System.out.println("Result: " + calc.getResult());
+				calc.minus(a, b);
 				}
+				if (action.equals("*")) {
+				calc.mul(a, b);
+				}
+				if (action.equals("/")) {
+				calc.div(a, b);
+				}
+				if (action.equals("^")) {
+				calc.ext(a, b);
+				}
+				System.out.println("Result: " + calc.getResult());
+				System.out.println("Clear the result?: yes/no");
+				String memory = reader.next();
+				if (memory.equals("yes")){
 				calc.cleanResult();
+				}
 				System.out.println("Exit: yes/no");
 				exit = reader.next();
 			}
