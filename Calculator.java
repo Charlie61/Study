@@ -5,13 +5,13 @@ public class Calculator {
 	/**
 		результат вычисления.
 	*/
-	private int result;
+	private double result;
 	/**
 	суммируем аргументы.
 	@param params Аргументы суммирования.
 */
-	public void add(int ... params) {
-		for (Integer param : params) {
+	public void summ(double ... params) {
+		for (Double param : params) {
 			this.result +=param;
 		}
 	}
@@ -19,7 +19,7 @@ public class Calculator {
 	получить результат.
 	@return результат вычисления.
 	*/
-	public int getResult() {
+	public double getResult() {
 		return this.result;
 	}
 	/**
@@ -27,5 +27,11 @@ public class Calculator {
 	*/
 	public void cleanResult() {
 		this.result = 0;
+	}
+	
+	public void minus(double ... params) {
+		for (Double param : params) {
+		this.result -= param;
+		}
 	}
 }

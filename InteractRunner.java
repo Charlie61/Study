@@ -12,10 +12,18 @@ public class InteractRunner {
 			while (!exit.equals("yes")) {
 				System.out.println("Enter first arg: ");
 				String first = reader.next();
+				System.out.println("Select action");
+				String action = reader.next();
 				System.out.println("Enter second arg: ");
 				String second = reader.next();
-				calc.add(Integer.valueOf(first), Integer.valueOf(second));
+				if (action.equals("+")) {	
+				calc.summ(Double.valueOf(first), Double.valueOf(second));
 				System.out.println("Result: " + calc.getResult());
+				}
+				if (action.equals("-")) {
+				calc.minus(Double.valueOf(first), Double.valueOf(second));
+				System.out.println("Result: " + calc.getResult());
+				}
 				calc.cleanResult();
 				System.out.println("Exit: yes/no");
 				exit = reader.next();
